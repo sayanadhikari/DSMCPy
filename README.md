@@ -6,8 +6,8 @@ A python code to simulate dilute gas with DSMC (Direct Simulation Monte Carlo)
 Rayleigh Problem = gas between 2 plates ([Alexander & Garcia, 1997](https://doi.org/10.1063/1.168619))
 
 ## Contributors
-- [Sayan Adhikari](https://github.com/sayanadhikari)[@sayanadhikari](https://twitter.com/sayanadhikari)
-- [Rinku Mishra](https://github.com/rinku-mishra)
+- [Sayan Adhikari](https://github.com/sayanadhikari), UiO, Norway. [@sayanadhikari](https://twitter.com/sayanadhikari)
+- [Rinku Mishra](https://github.com/rinku-mishra), CPP-IPR, India.
 
 ## Source 
 [Philip Mocz](https://github.com/pmocz/dsmc-python), Princeton Univeristy, [@PMoc](https://twitter.com/PMocz)
