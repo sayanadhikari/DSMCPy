@@ -11,6 +11,7 @@ Rayleigh Problem = gas between 2 plates ([Alexander & Garcia, 1997](https://doi.
 
 ## Source 
 [Philip Mocz](https://github.com/pmocz/dsmc-python), Princeton Univeristy, [@PMoc](https://twitter.com/PMocz)
+
 More details: http://www.algarcia.org/Pubs/DSMC97.pdf
 
 
