@@ -9,7 +9,7 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
-import scipy as sci
+from scipy import special
 import ini
 
 """
@@ -209,7 +209,7 @@ def main():
 	bgk = np.zeros(tt.shape)
 	for i in range(Nt):
 		xx = np.linspace(tt[i]/10000, tt[i], num=10000)
-		bgk[i] = 0.5*(1 + np.trapz(np.exp(-xx) / xx * sci.iv(1,xx), x=xx))
+		bgk[i] = 0.5*(1 + np.trapz(np.exp(-xx) / xx * special.iv(1,xx), x=xx))
 	plt.plot(tt*2.5, bgk, label='BGK theory', color='red')
 	plt.plot(tt, np.mean(vy0,axis=0).reshape((Nt,1))/uw, label='DSMC', color='blue')
 	plt.xlabel(r'$t/\tau$')
