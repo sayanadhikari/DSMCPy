@@ -1,4 +1,12 @@
 #!/usr/bin/env python
+
+##
+## @file		main.py
+## @brief		DSMCPy
+## @author	Sayan Adhikari <sayan.adhikari@fys.uio.no>
+##
+
+
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy as sci
