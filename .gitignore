@@ -2,6 +2,6 @@ _build
 .ipynb_checkpoints
 .DS_Store
 __pycache__/
-figures/*
+*.png
 venv
 
