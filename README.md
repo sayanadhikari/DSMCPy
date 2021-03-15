@@ -28,7 +28,7 @@ git clone https://github.com/sayanadhikari/DSMCPy.git
 ```
 Then enter inside the *DSMCPy* directory 
 ```shell
-cd picsp
+cd DSMCPy
 ```
 Now complile and built the *DSMCPy* code
 ```shell
