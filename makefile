@@ -9,12 +9,16 @@ VENV := venv
 
 # Source directory
 SRC := src
+
+# Figure directory
+FIG := figures
 # default target, when make executed without arguments
 all: venv
 	@echo "Creating virtual environment for running the code"
 $(VENV)/bin/activate: requirements.txt
 	python3 -m venv $(VENV)
 	./$(VENV)/bin/pip install -r requirements.txt
+	mkdir $(FIG)
 
 # venv is a shortcut target
 venv: $(VENV)/bin/activate
@@ -31,6 +35,7 @@ run: venv
 clean:
 	@echo "Cleaning compiled files..."
 	rm -rf $(VENV)
+	rm -rf $(FIG)
 	find . -type f -name '*.pyc' -delete
 
 .PHONY: all venv run clean
