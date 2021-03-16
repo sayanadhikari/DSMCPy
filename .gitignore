@@ -4,4 +4,5 @@ _build
 __pycache__/
 *.png
 venv
+.bak
 
