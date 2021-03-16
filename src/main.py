@@ -46,7 +46,6 @@ def main():
 	Nt              = int(params['time']['Nt'])                    # number of time steps (25 per mean-free time)
 	Nz				= int(params['grid']['Nz'])
 
-
 	lambda_mfp      = 1/(np.sqrt(2)*np.pi*n0)    # mean free path ~= 225
 	Lz              = Nz*lambda_mfp              # height of box  ~= 2250.8
 	Kn              = lambda_mfp / Lz            # Knudsen number  = 0.1
@@ -59,6 +58,7 @@ def main():
 
 	# vector for recording v_y(z=0)
 	if useNumba:
+		print("!!You have chhosen Numba, no live graphics will be plotted.")
 		vy0,Nt,uw = dmscpyNumba(uw,Tw,n0,N,Nsim,Ncell,Nmft,Nt,Nz,Lz,Kn,tau,dt,dz,vol,Ne)
 	else:
 		vy0,Nt,uw = dmscpy(uw,Tw,n0,N,Nsim,Ncell,Nmft,Nt,Nz,Lz,Kn,tau,dt,dz,vol,Ne,plotRealTime)
