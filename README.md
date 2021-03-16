@@ -1,6 +1,6 @@
 # DSMCPy (Direct Simulation Monte Carlo With Python)
 
-A python code to simulate dilute gas with DSMC (Direct Simulation Monte Carlo)
+A python code to simulate dilute gas with DSMC (Direct Simulation Monte Carlo). [Numba JIT compiler](https://numba.pydata.org/) for Python has been implemented for faster performance. User can disable Numba for live graphics mode in the _input.ini_ file.
 
 ## Problem
 Rayleigh Problem = gas between 2 plates ([Alexander & Garcia, 1997](https://doi.org/10.1063/1.168619))
@@ -17,9 +17,9 @@ More details: http://www.algarcia.org/Pubs/DSMC97.pdf
 Installation
 ------------
 #### Prerequisites
-1. make buildsystem
-2. python3 or higher
-3. git
+1. [make buildsystem](https://www.gnu.org/software/make/)
+2. [python3 or higher](https://www.python.org/download/releases/3.0/)
+3. [git](https://git-scm.com/)
 
 #### Procedure
 First make a clone of the master branch using the following command
@@ -42,5 +42,35 @@ make run
 ```
 Parameter Setup
 ----------------------
-Edit the input.ini and run the code again.
+Edit the _input.ini_ and run the code again. The basic structure of _input.ini_ is provided below,
+```ini
+;
+; @file		input.ini
+; @brief	DSMCPy inputfile.
+; @author	Sayan Adhikari <sayan.adhikari@fys.uio.no>
+;
+scope = default
+
+[grid]
+Ncell = 50    ; number of cells
+Nz    = 10    ; Length of the box in terms of mean free path
+
+[particles]
+n0   = 0.001  ; density
+N    = 50000  ; number of sampling particles
+
+[boundary]
+uw   = 0.2     ; lower wall velocity
+Tw   = 1       ; wall temperature
+
+[time]
+Nmft = 20       ; number of mean-free times to run simulation
+Nt   = 200      ; (25*Nmft) number of time steps (25 per mean-free time)
+Nsim = 2        ; number of simulations to run
+
+[options]
+plotRealTime  = True  ;
+plotFigure    = True
+useNumba      = True  ;set to false to disable Numba
+```
 
